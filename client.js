@@ -1,4 +1,4 @@
-var serverURL = 'http://localhost';
+var serverURL = 'http://107.170.148.84';
 var socket = require('socket.io-client')(serverURL);
 var reconnect;
 
