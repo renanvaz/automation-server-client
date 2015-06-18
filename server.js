@@ -17,7 +17,6 @@ var fs = require('fs');
 app.listen(80);
 
 io.on('connection', function (socket) {
-
     console.log(socket);
     console.log('New client connected to server');
 
