@@ -18,15 +18,14 @@ app.listen(80);
 
 io.on('connection', function (socket) {
     console.log(socket);
-    console.log('New client connected to server');
+    console.log('New client connected to server.');
 
     socket.on('confirm', function (data) {
         console.log(data);
     });
 
     socket.on('disconnect', function() {
-        console.log('Client disconnected from server');
-
+        console.log('Client disconnected from server.');
     });
 });
 
