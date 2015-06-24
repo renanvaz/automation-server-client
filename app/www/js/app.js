@@ -2,17 +2,17 @@ var IS_WEB = typeof cordova === 'undefined' ? true : false;
 
 var serverURL = 'http://107.170.148.84';
 var socket = io(serverURL, {
-    'reconnection delay': 1000,
-    'reconnection limit': Infinity,
-    'max reconnection attempts': Infinity
+  'reconnection delay': 1000,
+  'reconnection limit': Infinity,
+  'max reconnection attempts': Infinity
 });
 
 socket.on('connect', function(){
-    console.log('Connected to server "'+serverURL+'".');
+  console.log('Connected to server "'+serverURL+'".');
 });
 
 socket.on('disconnect', function(){
-    console.log('Disconnected from server "'+serverURL+'".');
+  console.log('Disconnected from server "'+serverURL+'".');
 });
 
 socket.on('call', function(data){
@@ -34,6 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
+
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
@@ -70,19 +71,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   });
-  // if none of the above states are matched, use this as the fallback
+
   $urlRouterProvider.otherwise('/app/groups');
 });
 
 
 if (IS_WEB) {
   setTimeout(function(){
-    var domElement = document.querySelector('body');
-    angular.bootstrap(domElement, ['starter']);
+    angular.bootstrap(document.querySelector('body'), ['starter']);
   }, 0);
 } else {
   document.addEventListener('deviceready', function() {
-    var domElement = document.querySelector('body');
-    angular.bootstrap(domElement, ['starter']);
+    angular.bootstrap(document.querySelector('body'), ['starter']);
   }, true);
 }
