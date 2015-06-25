@@ -1,45 +1,67 @@
 /**
- * State
+ * Home
  * @uses  74HC595 CI for output data
  */
-function State () {
-    this._delay     = 0;
+function Home (serverURL) {
+    var serverURL = 'http://107.170.148.84';
+
+    this._delay     = 1000/30;
     this._loopID    = null;
     this._data      = [];
+    this._socket      = [];
 
     // Load the data
     this.read();
 }
 
 /**
- * Start watch
+ * Start server connection
  * @return void
  */
-State.prototype.start = function(fn){
+Home.prototype.connect = function(serverURL){
+    this._socket = require('socket.io-client')(serverURL, {
+        'reconnection delay': 1000,
+        'reconnection limit': Infinity,
+        'max reconnection attempts': Infinity
+    });
+
+    this._socket.on('connect', function(){
+        console.log('Connected to server "'+serverURL+'".');
+    });
+
+    this._socket.on('disconnect', function(){
+        console.log('Disconnected from server "'+serverURL+'".');
+    });
+
     this._loopID = setInterval(function(){
-        if () {
-            socket.emmit('status', {data: sender});
+        if (false) {
+            this._socket.emmit('status', {data: sender});
         }
-    }, this._delay);
+    }.bind(this), this._delay);
+
+    setTimeout(function(){
+        this.disconnect();
+    }.bind(this), 5000)
 };
 
 /**
  * Stop the main loop
  * @return void
  */
-State.prototype.stop = function(){
+Home.prototype.disconnect = function(){
     clearInterval(this._loopID);
+    this._socket.disconnect();
 };
 
 /**
  * Read data
  * @return void
  */
-State.prototype.read = function(){
+Home.prototype.read = function(){
     this._data;
 };
 
-State.prototype.get = function(){
+Home.prototype.get = function(){
     return this._data;
 };
 
@@ -48,7 +70,7 @@ State.prototype.get = function(){
  * Send serial data to pins of the CI 74HC595 chain
  * @param Array data eg: [0,1,0,1,0,0]
  */
-State.prototype.set = function(data){
+Home.prototype.set = function(data){
     // Latch LOW
     data.forEach(function(item, i){
         this._data[i].status = item;
@@ -64,34 +86,11 @@ State.prototype.set = function(data){
  * Reset the data values
  * @return void
  */
-State.prototype.reset = function(){
+Home.prototype.reset = function(){
     this._data.forEach(function(item){
         item.watts = 0;
     });
 };
 
-
-var state = new State;
-
-var serverURL = 'http://107.170.148.84';
-var socket = require('socket.io-client')(serverURL, {
-    'reconnection delay': 1000,
-    'reconnection limit': Infinity,
-    'max reconnection attempts': Infinity
-});
-
-socket.on('connect', function(){
-    console.log('Connected to server "'+serverURL+'".');
-});
-
-socket.on('disconnect', function(){
-    console.log('Disconnected from server "'+serverURL+'".');
-});
-
-
-// On any changes on the status, tell the server
-// sender = status; // Clone current state of status
-// status.reset();
-//
-
-state.start();
+var home = new Home;
+home.connect('http://107.170.148.84');
