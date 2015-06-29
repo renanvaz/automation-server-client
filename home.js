@@ -34,8 +34,8 @@ Home.prototype.connect = function(serverURL){
     });
 
     this._loopID = setInterval(function(){
-        if (false) {
-            this._socket.emmit('status', {data: sender});
+        if (true) {
+            this._socket.emmit('status', {data: this._data});
         }
     }.bind(this), this._delay);
 };
@@ -54,7 +54,7 @@ Home.prototype.disconnect = function(){
  * @return void
  */
 Home.prototype.read = function(){
-    this._data;
+    this._data = [{status: false, watts: 0}];
 };
 
 Home.prototype.get = function(){

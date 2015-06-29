@@ -38,6 +38,9 @@ echo "INSTALL IOJS ARM6l"
 echo "------------------------------------------------"
 sudo wget -O - https://iojs.org/download/release/latest/iojs-v2.3.1-linux-armv6l.tar.gz | sudo tar -C /usr/local/ --strip-components=1 -zxv
 
+
+
+
 echo ""
 echo ""
 echo "------------------------------------------------"
