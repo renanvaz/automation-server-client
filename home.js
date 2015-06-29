@@ -3,12 +3,12 @@
  * @uses  74HC595 CI for output data
  */
 function Home (serverURL) {
-    var serverURL = 'http://107.170.148.84';
+    this._serverURL = 'http://107.170.148.84';
 
-    this._delay     = 1000/30;
+    this._delay     = 1000/30; // 30 FPS
     this._loopID    = null;
     this._data      = [];
-    this._socket      = [];
+    this._socket    = [];
 
     // Load the data
     this.read();
@@ -19,7 +19,7 @@ function Home (serverURL) {
  * @return void
  */
 Home.prototype.connect = function(serverURL){
-    this._socket = require('socket.io-client')(serverURL, {
+    this._socket = require('socket.io-client')(this._serverURL, {
         'reconnection delay': 1000,
         'reconnection limit': Infinity,
         'max reconnection attempts': Infinity
@@ -38,10 +38,6 @@ Home.prototype.connect = function(serverURL){
             this._socket.emmit('status', {data: sender});
         }
     }.bind(this), this._delay);
-
-    setTimeout(function(){
-        this.disconnect();
-    }.bind(this), 5000)
 };
 
 /**

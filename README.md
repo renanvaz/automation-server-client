@@ -15,4 +15,9 @@
 ## Observações
 - É necessário que se o sistema esteja fora do ar ou caído, que a casa possa funcionar normalmente e estar com todas as tomadas liberadas.
 - Ver se é possível deixar todos os GNDs fora do raspberry, pois o raspberry pode não conseguir fornecer a conrrente necessária para todos os eletrônicos.
-- REF do sensor de corrente: `https://dutraleo.wordpress.com/2013/01/29/sensor-de-corrente-acs712-30a/` ``
+- REF do sensor de corrente: [Artigo](https://dutraleo.wordpress.com/2013/01/29/sensor-de-corrente-acs712-30a/) [Produto](http://produto.mercadolivre.com.br/MLB-653250744-sensor-corrente-30a-arduino-pic-atmega-arm-modulo-_JM)
+
+## Requirimentos
+- NodeJS or IOJS ARM6l version
+- MysqlServer database
+- Static IP
