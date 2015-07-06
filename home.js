@@ -3,8 +3,6 @@
  * @uses  74HC595 CI for output data
  */
 function Home (serverURL) {
-    this._serverURL = 'http://107.170.148.84';
-
     this._delay     = 1000/30; // 30 FPS
     this._loopID    = null;
     this._data      = [];
