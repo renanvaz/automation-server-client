@@ -1,4 +1,4 @@
-/**
+ /**
  * Home
  * @uses  74HC595 CI for output data
  */
@@ -85,6 +85,15 @@ Home.prototype.reset = function(){
         item.watts = 0;
     });
 };
+
+var exec = require('child_process').exec;
+// child = exec('cat *.js bad_file | wc -l', function (error, stdout, stderr) {
+//     console.log('stdout: ' + stdout);
+//     console.log('stderr: ' + stderr);
+//     if (error !== null) {
+//       console.log('exec error: ' + error);
+//     }
+// });
 
 var home = new Home;
 home.connect('http://107.170.148.84');

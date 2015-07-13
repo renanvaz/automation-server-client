@@ -48,4 +48,13 @@ echo "INSTALL NPM PACKAGE \"FOREVER\" GLOBALLY"
 echo "------------------------------------------------"
 sudo npm install forever -g
 
+
+
+echo ""
+echo ""
+echo "------------------------------------------------"
+echo "ENABLING GPIO PINS"
+echo "------------------------------------------------"
+
+
 # sed -e 's/a/A/' -e 's/b/B/' < file
