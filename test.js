@@ -18,14 +18,14 @@ var GPIO = {
             Helpers.execSync('sudo echo "'+pin+'" > /sys/class/gpio/export');
         } catch (e) {}
 
-        Helpers.execSync('sudo echo "'+mode+'" > /sys/class/gpio/gpio18/direction');
+        Helpers.execSync('sudo echo "'+mode+'" > /sys/class/gpio/gpio'+pin+'/direction');
 
-        this._data[pin] = {mode: mode};
+        this._data[pin] = mode;
 
         return new Pin(pin);
     },
     in: function(pin) {
-        var mode = this._data[pin].mode;
+        var mode = this._data[pin];
 
         if (mode === this.IN) {
             return Helpers.execSync('sudo cat /sys/class/gpio/gpio'+pin+'/value');
@@ -34,7 +34,7 @@ var GPIO = {
         }
     },
     out: function(pin, value) {
-        var mode = this._data[pin].mode;
+        var mode = this._data[pin];
 
         if (mode === this.OUT) {
             return Helpers.execSync('sudo echo "'+(!!value ? 1 : 0)+'" > /sys/class/gpio/gpio'+pin+'/value');
