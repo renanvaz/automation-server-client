@@ -64,7 +64,7 @@ end = new Date().getTime();
 console.log(end - start);
 
 start = new Date().getTime();
-Helpers.sleep(.010);
+Helpers.sleep(.066);
 end = new Date().getTime();
 console.log(end - start);
 
@@ -74,6 +74,6 @@ end = new Date().getTime();
 console.log(end - start);
 
 start = new Date().getTime();
-Helpers.sleep(.010);
+Helpers.sleep(.066);
 end = new Date().getTime();
 console.log(end - start);
