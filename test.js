@@ -7,7 +7,7 @@ var Helpers = {
     }
 };
 
-var GPOI = {
+var GPIO = {
     IN: 'in',
     OUT: 'out',
 
@@ -46,14 +46,14 @@ function Pin(pin) {
 }
 
 Pin.prototype.in = function() {
-    GPOI.in(this._pin);
+    GPIO.in(this._pin);
 };
 
 Pin.prototype.out = function(value) {
-    GPOI.out(this._pin, value);
+    GPIO.out(this._pin, value);
 };
 
-var LATCH_PIN = GPOI.setup('17', GPIO.OUT);
+var LATCH_PIN = GPIO.setup('17', GPIO.OUT);
 
 for (var i = 0; i < 10; i++) {
     LATCH_PIN.out(1);
