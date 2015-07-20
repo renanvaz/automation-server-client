@@ -16,7 +16,7 @@ var GPIO = {
     setup: function(pin, mode) {
         try {
             Helpers.execSync('sudo echo "'+pin+'" > /sys/class/gpio/export');
-        } catch () {}
+        } catch (e) {}
 
         Helpers.execSync('sudo echo "'+mode+'" > /sys/class/gpio/gpio18/direction');
 
