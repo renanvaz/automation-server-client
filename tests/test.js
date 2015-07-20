@@ -35,7 +35,7 @@ var GPIO = {
         var mode = this._data[pin];
 
         if (mode === this.OUT) {
-            return Helpers.exec('sudo echo "'+(!!value ? 1 : 0)+'" > /sys/class/gpio/gpio'+pin+'/value');
+            return Helpers.execSync('sudo echo "'+(!!value ? 1 : 0)+'" > /sys/class/gpio/gpio'+pin+'/value');
         } else {
             throw new Error('The pin mode is "'+mode+'" and is not able to use the "out" method.');
         }
