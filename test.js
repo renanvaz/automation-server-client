@@ -14,7 +14,7 @@ var GPIO = {
     _data: {},
 
     setup: function(pin, mode) {
-        Helpers.execSync('if [ ! -d "/sys/class/gpio/gpio'+pin+'" ]; then sudo echo "'+pin+'" > /sys/class/gpio/export fi');
+        Helpers.execSync('if [ ! -d "/sys/class/gpio/gpio'+pin+'" ]; then sudo echo "'+pin+'" > /sys/class/gpio/export; fi');
         Helpers.execSync('sudo echo "'+mode+'" > /sys/class/gpio/gpio'+pin+'/direction');
 
         this._data[pin] = mode;
