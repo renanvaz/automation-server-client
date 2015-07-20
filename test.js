@@ -55,17 +55,24 @@ Pin.prototype.out = function(value) {
 
 var LATCH_PIN = GPIO.setup('17', GPIO.OUT);
 
-var start = new Date().getTime(), end;
+var start, end;
 
+start = new Date().getTime()
 LATCH_PIN.out(1);
 end = new Date().getTime();
-console.log(end - start)
+console.log(end - start);
+
+start = new Date().getTime();
 Helpers.sleep(.010);
 end = new Date().getTime();
-console.log(end - start)
+console.log(end - start);
+
+start = new Date().getTime()
 LATCH_PIN.out(0);
 end = new Date().getTime();
-console.log(end - start)
+console.log(end - start);
+
+start = new Date().getTime();
 Helpers.sleep(.010);
 end = new Date().getTime();
-console.log(end - start)
+console.log(end - start);
