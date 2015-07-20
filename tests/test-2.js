@@ -9,4 +9,4 @@ var Helpers = {
     }
 };
 
-Helpers.spawnSync('sudo sh', ['blink.sh']);
+Helpers.spawnSync('sudo bash', ['blink.sh']);
