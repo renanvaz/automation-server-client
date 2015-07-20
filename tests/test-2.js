@@ -9,4 +9,8 @@ var Helpers = {
     }
 };
 
-Helpers.execSync('sudo bash blink.sh');
+consolelog('em 1s vai ser chamado');
+
+setTimeout(function(){
+    Helpers.execSync('sudo bash blink.sh');
+}, 1000);
