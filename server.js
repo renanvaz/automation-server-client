@@ -1,9 +1,11 @@
+'use strict';
+
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'me',
-  password : 'secret',
-  database : 'my_db'
+  host    : 'localhost',
+  user    : 'me',
+  password: 'secret',
+  database: 'my_db'
 });
 
 var app = require('http').createServer(function (req, res) {

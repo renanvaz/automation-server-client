@@ -36,7 +36,7 @@ echo ""
 echo "------------------------------------------------"
 echo "INSTALL IOJS ARM6l"
 echo "------------------------------------------------"
-sudo wget -O - https://iojs.org/download/release/latest/iojs-v2.3.1-linux-armv6l.tar.gz | sudo tar -C /usr/local/ --strip-components=1 -zxv
+sudo wget -O - https://iojs.org/download/release/v2.3.4/iojs-v2.3.4-linux-armv6l.tar.gz | sudo tar -C /usr/local/ --strip-components=1 -zxv
 
 
 
@@ -50,11 +50,13 @@ sudo npm install forever -g
 
 
 
-echo ""
-echo ""
-echo "------------------------------------------------"
-echo "ENABLING GPIO PINS"
-echo "------------------------------------------------"
-
+# echo ""
+# echo ""
+# echo "------------------------------------------------"
+# echo "INSTALL THE WIRINGPI LIBRARY TO CONTROL THE GPIO"
+# echo "------------------------------------------------"
+# git clone git://git.drogon.net/wiringPi
+# cd wiringPi
+# ./build
 
 # sed -e 's/a/A/' -e 's/b/B/' < file
