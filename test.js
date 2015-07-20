@@ -60,7 +60,7 @@ var LATCH_PIN = GPIO.setup('17', GPIO.OUT);
 
 for (var i = 0; i < 10; i++) {
     LATCH_PIN.out(1);
-    Helpers.sleep(.5);
+    Helpers.sleep(.2);
     LATCH_PIN.out(0);
-    Helpers.sleep(.5);
+    Helpers.sleep(.2);
 }
