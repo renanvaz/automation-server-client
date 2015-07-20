@@ -8,4 +8,4 @@ var Helpers = {
     }
 };
 
-Helpers.execSync('sudo ./blink.sh');
+Helpers.execSync('sudo blink.sh');
