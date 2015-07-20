@@ -14,8 +14,8 @@ var GPIO = {
     _data: {},
 
     setup: function(pin, mode) {
-        Helpers.execSync('echo "'+pin+'" > /sys/class/gpio/export');
-        Helpers.execSync('echo "'+mode+'" > /sys/class/gpio/gpio18/direction');
+        Helpers.execSync('sudo echo "'+pin+'" > /sys/class/gpio/export');
+        Helpers.execSync('sudo echo "'+mode+'" > /sys/class/gpio/gpio18/direction');
 
         this._data[pin] = {mode: mode};
 
@@ -25,7 +25,7 @@ var GPIO = {
         var mode = this._data[pin].mode;
 
         if (mode === this.IN) {
-            return Helpers.execSync('cat /sys/class/gpio/gpio'+pin+'/value');
+            return Helpers.execSync('sudo cat /sys/class/gpio/gpio'+pin+'/value');
         } else {
             throw new Error('The pin mode is "'+mode+'" and is not able to use the "in" method.');
         }
@@ -34,7 +34,7 @@ var GPIO = {
         var mode = this._data[pin].mode;
 
         if (mode === this.OUT) {
-            return Helpers.execSync('echo "'+(!!value ? 1 : 0)+'" > /sys/class/gpio/gpio'+pin+'/value');
+            return Helpers.execSync('sudo echo "'+(!!value ? 1 : 0)+'" > /sys/class/gpio/gpio'+pin+'/value');
         } else {
             throw new Error('The pin mode is "'+mode+'" and is not able to use the "out" method.');
         }
