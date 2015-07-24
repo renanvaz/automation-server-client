@@ -58,7 +58,7 @@ var DATA_PIN = GPIO.setup('17', GPIO.OUT);
 var CLOCK_PIN = GPIO.setup('22', GPIO.OUT);
 var LATCH_PIN = GPIO.setup('27', GPIO.OUT);
 
-var data = [0010110001001011];
+var data = [0,0,1,0,1,1,0,0,0,1,0,0,1,0,1,1];
 
 LATCH_PIN.out(0);
 for (var i = 0; i < data.length; i++) {
