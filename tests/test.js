@@ -58,10 +58,10 @@ var DATA_PIN = GPIO.setup('17', GPIO.OUT);
 var CLOCK_PIN = GPIO.setup('22', GPIO.OUT);
 var LATCH_PIN = GPIO.setup('27', GPIO.OUT);
 
+LATCH_PIN.out(0);
 for (var i = 0; i < 16; i++) {
     CLOCK_PIN.out(0);
-    LATCH_PIN.out(0);
     DATA_PIN.out(i%4);
-    LATCH_PIN.out(1);
     CLOCK_PIN.out(1);
 }
+LATCH_PIN.out(1);
