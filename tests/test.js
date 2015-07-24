@@ -61,7 +61,7 @@ var LATCH_PIN = GPIO.setup('27', GPIO.OUT);
 LATCH_PIN.out(0);
 for (var i = 0; i < 16; i++) {
     CLOCK_PIN.out(0);
-    DATA_PIN.out(i%4);
+    DATA_PIN.out(i%3);
     CLOCK_PIN.out(1);
 }
 LATCH_PIN.out(1);
