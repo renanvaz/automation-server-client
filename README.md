@@ -25,3 +25,17 @@
 - NodeJS or IOJS ARM6l version
 - MysqlServer database
 - Static IP
+
+Fonte de computador (3.3v, 5v e 12v)
+Transistores/Mosfet
+Optoacopladores
+Relé 5v 220v 10a/30a
+Diodos
+Resistores
+Leds
+CI
+    MCP3008
+    74HC595
+    CD4051
+LCD 7'
+Câmera?
