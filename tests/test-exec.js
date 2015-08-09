@@ -60,6 +60,8 @@ var LATCH_PIN = GPIO.setup('27', GPIO.OUT);
 
 var data = [0,0,1,0,1,1,0,0,0,1,0,0,1,0,1,1].reverse();
 
+var timeStart = new Date.getTime();
+
 LATCH_PIN.out(0);
 for (var i = 0; i < data.length; i++) {
     CLOCK_PIN.out(0);
@@ -67,3 +69,5 @@ for (var i = 0; i < data.length; i++) {
     CLOCK_PIN.out(1);
 }
 LATCH_PIN.out(1);
+
+console.log(new Date.getTime() - timeStart);
