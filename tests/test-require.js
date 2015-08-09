@@ -2,4 +2,4 @@
 
 var Helpers = require('./helpers');
 
-console.log(Helpers.exec('pwd'));
+console.log(Helpers.exec);
