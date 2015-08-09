@@ -9,8 +9,8 @@ var Helpers = {
     }
 };
 
-console.log('em 1s vai ser chamado');
+var timeStart = new Date().getTime();
 
-setTimeout(function(){
-    Helpers.execSync('sudo bash blink.sh');
-}, 1000);
+Helpers.execSync('sudo bash blink.sh');
+
+console.log(new Date().getTime() - timeStart);

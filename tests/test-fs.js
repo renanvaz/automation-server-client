@@ -60,7 +60,7 @@ var DATA_PIN = GPIO.setup('17', GPIO.OUT);
 var CLOCK_PIN = GPIO.setup('22', GPIO.OUT);
 var LATCH_PIN = GPIO.setup('27', GPIO.OUT);
 
-var data = [0,0,1,0,1,1,0,0,0,1,0,0,1,0,1,1].reverse();
+var data = [0,0,1,0,1,1,0,0,0,1,0,0,1,0,1,1, 0,0,1,0,1,1,0,0,0,1,0,0,1,0,1,1, 0,0,1,0,1,1,0,0,0,1,0,0,1,0,1,1, 0,0,1,0,1,1,0,0,0,1,0,0,1,0,1,1].reverse();
 
 var timeStart = new Date().getTime();
 
