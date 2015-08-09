@@ -1,6 +1,6 @@
 'use strict';
 
-var Helpers = require('helpers');
+var Helpers = require('./helpers');
 
 var GPIO = {
     IN: 'in',

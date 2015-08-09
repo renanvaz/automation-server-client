@@ -1,6 +1,6 @@
 'use strict';
 
-var GPIO = require('gpio');
+var GPIO = require('./gpio');
 
 var DATA_PIN = GPIO.setup('17', GPIO.OUT);
 var CLOCK_PIN = GPIO.setup('22', GPIO.OUT);
