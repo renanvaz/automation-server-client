@@ -1,8 +1,8 @@
 'use strict';
 
 var Helpers = {
-    write: require('fs').writeSync,
-    read: require('fs').writeSync,
+    write: require('fs').writeFileSync,
+    read: require('fs').readFileSync,
     exists: require('fs').existsSync,
     exec: require('child_process').execSync,
     sleep: function(time) {
