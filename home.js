@@ -8,7 +8,7 @@
 function Home (serverURL) {
     this._sendConsumption   = 1; // each 1 second
     this._counterFps        = 0;
-    this._fps               = 30; // FPS check state
+    this._fps               = 1; // FPS check state
     this._loopID            = null;
     this._data              = [];
     this._socket            = [];
@@ -42,6 +42,9 @@ Home.prototype.connect = function(serverURL) {
 
     this._socket.on('connect', function(){
         console.log('Connected to server "'+serverURL+'".');
+
+        // Read state
+        // Send state
     });
 
     this._socket.on('disconnect', function(){
