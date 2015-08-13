@@ -1,7 +1,6 @@
 # HOMEZ
 
 É composto por 3 partes:
-
 - Home
 - Server
 - App
@@ -12,7 +11,6 @@
 - Qualquer outro evento deverá ser uma requisição no momento em que for requerido a visualização do dado, não será automático como a mudança de estado.
 
 ## Observações
-- O
 - É necessário que se o sistema esteja fora do ar ou caído, que a casa possa funcionar normalmente e estar com todas as tomadas liberadas.
 - Ver se é possível deixar todos os GNDs fora do raspberry, pois o raspberry pode não conseguir fornecer a conrrente necessária para todos os eletrônicos.
 - REF do sensor de corrente: [Artigo](https://dutraleo.wordpress.com/2013/01/29/sensor-de-corrente-acs712-30a/) [Produto](http://produto.mercadolivre.com.br/MLB-653250744-sensor-corrente-30a-arduino-pic-atmega-arm-modulo-_JM)
@@ -21,7 +19,7 @@
 - GPIO PINs (Model B Rev 2) para realizar o shift out são: 17 (data), 27 (latch), 22 (clock)
 - Ver se vale a pena utilizar esta lib para o GPIO: http://wiringpi.com/download-and-install/
 
-## Requirimentos
+## Requerimentos
 - NodeJS or IOJS ARM6l version
 - MysqlServer database
 - Static IP
