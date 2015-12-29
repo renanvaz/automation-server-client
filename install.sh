@@ -36,7 +36,7 @@ echo ""
 echo "------------------------------------------------"
 echo "INSTALL IOJS ARM6l"
 echo "------------------------------------------------"
-sudo wget -O - https://iojs.org/download/release/v2.4.0/iojs-v2.4.0-linux-armv6l.tar.gz | sudo tar -C /usr/local/ --strip-components=1 -zxv
+sudo wget -O - https://nodejs.org/dist/v4.2.4/node-v4.2.4-linux-armv6l.tar.gz | sudo tar -C /usr/local/ --strip-components=1 -zxv
 
 
 

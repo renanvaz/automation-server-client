@@ -12,11 +12,10 @@
 - Qualquer outro evento deverá ser uma requisição no momento em que for requerido a visualização do dado, não será automático como a mudança de estado.
 
 ## Observações
-- O
 - É necessário que se o sistema esteja fora do ar ou caído, que a casa possa funcionar normalmente e estar com todas as tomadas liberadas.
 - Ver se é possível deixar todos os GNDs fora do raspberry, pois o raspberry pode não conseguir fornecer a conrrente necessária para todos os eletrônicos.
 - REF do sensor de corrente: [Artigo](https://dutraleo.wordpress.com/2013/01/29/sensor-de-corrente-acs712-30a/) [Produto](http://produto.mercadolivre.com.br/MLB-653250744-sensor-corrente-30a-arduino-pic-atmega-arm-modulo-_JM)
-- GPIO via Shell. Verificar tensão de saída dos PINs. [Artigo](http://luketopia.net/2013/07/28/raspberry-pi-gpio-via-the-shell/)
+- GPIO via Shell. Verificar tensão de saída dos PINs (3v). [Artigo](http://luketopia.net/2013/07/28/raspberry-pi-gpio-via-the-shell/)
 - Verificar a versão do Raspberry PI: [Artigo](http://www.raspberrypi-spy.co.uk/2012/09/checking-your-raspberry-pi-board-version/)
 - GPIO PINs (Model B Rev 2) para realizar o shift out são: 17 (data), 27 (latch), 22 (clock)
 - Ver se vale a pena utilizar esta lib para o GPIO: http://wiringpi.com/download-and-install/
@@ -35,7 +34,7 @@ Resistores
 Leds
 CI
     MCP3008
-    74HC595
-    CD4051
+    74HC595 (Shift Register - Serial to paralell)
+    CD4051 (Analog Multiplex)
 LCD 7'
 Câmera?
