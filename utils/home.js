@@ -24,7 +24,7 @@ function Home (serverURL) {
         CLOCK: GPIO.setup(22, GPIO.OUT),
         DATA: GPIO.setup(17, GPIO.OUT),
         CLEAR: GPIO.setup(4, GPIO.OUT),
-        COUNT: GPIO.setup(18, GPIO.IN)
+        END: GPIO.setup(18, GPIO.IN)
     };
 
     if (!Helpers.exists(CONFIG_FILE)) {
@@ -58,14 +58,14 @@ Home.prototype.hardware = function() {
         this.gpio.DATA.out(1);
         this.gpio.CLOCK.out(1);
 
-        console.log('COUNT', this.gpio.COUNT.in());
+        console.log('COUNT', this.gpio.END.in());
 
-    } while (this.gpio.COUNT.in() != 1);
+    } while (this.gpio.END.in() != 1);
 
-    setTimtout(function(){
+    setTimeout(function(){
         this.gpio.CLEAR.out(0); // Clear in 0
         this.gpio.CLEAR.out(1); // Back to normal
-    }, 1000);
+    }.bind(this), 1000);
 
     Helpers.write(CONFIG_FILE, JSON.stringify({devices: counter}));
 
