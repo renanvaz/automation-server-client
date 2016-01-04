@@ -34,7 +34,7 @@ sudo apt-get install language-pack-pt-base -y
 echo ""
 echo ""
 echo "------------------------------------------------"
-echo "INSTALL IOJS ARM6l"
+echo "INSTALL NODEJS ARM6l"
 echo "------------------------------------------------"
 sudo wget -O - https://nodejs.org/dist/v4.2.4/node-v4.2.4-linux-armv6l.tar.gz | sudo tar -C /usr/local/ --strip-components=1 -zxv
 
