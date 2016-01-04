@@ -65,7 +65,7 @@ Home.prototype.hardware = function() {
     this.gpio.LATCH.out(1);
 
     this.gpio.CLEAR.out(0); // Clear in 0
-    this.gpio.CLEAR.out(1); // Back to normal
+    // this.gpio.CLEAR.out(1); // Back to normal
 
     Helpers.write(CONFIG_FILE, JSON.stringify({devices: counter}));
 
