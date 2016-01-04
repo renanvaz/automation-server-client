@@ -4,7 +4,7 @@ var GPIO = require('./gpio');
 var Helpers = require('./helpers');
 var Messages = require('./messages');
 
-var CONFIG_FILE = __dirname+'../homez.json';
+var CONFIG_FILE = __dirname+'/../homez.json';
 
  /**
  * Home
