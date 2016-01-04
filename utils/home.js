@@ -34,7 +34,7 @@ function Home (serverURL) {
 
         this.hardware();
 
-        console.log('Time', Date.now() - d1)
+        console.log('Time', Date.now() - d1);
     }
 
     this.config = JSON.parse(Helpers.read(CONFIG_FILE));
@@ -62,8 +62,10 @@ Home.prototype.hardware = function() {
 
     } while (this.gpio.COUNT.in() != 1);
 
-    this.gpio.CLEAR.out(0); // Clear in 0
-    this.gpio.CLEAR.out(1); // Back to normal
+    setTimtout(function(){
+        this.gpio.CLEAR.out(0); // Clear in 0
+        this.gpio.CLEAR.out(1); // Back to normal
+    }, 1000);
 
     Helpers.write(CONFIG_FILE, JSON.stringify({devices: counter}));
 
