@@ -51,15 +51,13 @@ Home.prototype.hardware = function() {
     this.gpio.CLEAR.out(0); // Clear in 0
     this.gpio.CLEAR.out(1); // Back to normal
 
-    this.gpio.LATCH.out(0);
     do {
         counter++;
 
         this.gpio.CLOCK.out(0);
         this.gpio.DATA.out(1);
         this.gpio.CLOCK.out(1);
-    } while (this.gpio.END.in() != 1);
-    this.gpio.LATCH.out(1);
+    } while (this.gpio.END.in() != 1 && counter < 99);
 
     // this.gpio.CLEAR.out(0); // Clear in 0
     // this.gpio.CLEAR.out(1); // Back to normal
