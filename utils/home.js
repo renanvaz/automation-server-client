@@ -29,7 +29,9 @@ function Home (serverURL) {
 
     if (!Helpers.exists(CONFIG_FILE)) {
         console.log(Messages.error.noConfigFile);
+
         var d1 =  Date.now();
+
         this.hardware();
 
         console.log('Time', Date.now() - d1)
