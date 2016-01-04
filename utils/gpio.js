@@ -41,7 +41,7 @@ function Pin(pin) {
 }
 
 Pin.prototype.in = function() {
-    GPIO.in(this._pin);
+    return GPIO.in(this._pin);
 };
 
 Pin.prototype.out = function(value) {
