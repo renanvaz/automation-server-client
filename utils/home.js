@@ -48,11 +48,11 @@ Home.prototype.hardware = function() {
     do {
         counter++;
 
-        // this.gpio.LATCH_PIN.out(0);
-        this.gpio.CLOCK_PIN.out(0);
-        this.gpio.DATA_PIN.out(1);
-        this.gpio.CLOCK_PIN.out(1);
-        // this.gpio.LATCH_PIN.out(1);
+        // this.gpio.LATCH.out(0);
+        this.gpio.CLOCK.out(0);
+        this.gpio.DATA.out(1);
+        this.gpio.CLOCK.out(1);
+        // this.gpio.LATCH.out(1);
 
     } while (this.gpio.COUNT.in() != 1);
 
@@ -138,25 +138,21 @@ Home.prototype.readAddress = function(address) {
     var masterAddress = ('000'+(Math.floor(address / 8).toString(2))).substr(-3);
     var slaveAddress = ('000'+(Math.floor(address % 8).toString(2))).substr(-3);
 
-    Helpers.execSync('Clock LOW');
+    // Helpers.execSync('Clock LOW');
 
     // Set the master address
-    Helpers.execSync('Pin 1 = '+masterAddress[0]);
-    Helpers.execSync('Pin 2 = '+masterAddress[1]);
-    Helpers.execSync('Pin 3 = '+masterAddress[2]);
+    // Helpers.execSync('Pin 1 = '+masterAddress[0]);
+    // Helpers.execSync('Pin 2 = '+masterAddress[1]);
+    // Helpers.execSync('Pin 3 = '+masterAddress[2]);
 
     // Set the slaves address
-    Helpers.execSync('Pin 1 = '+slaveAddress[0]);
-    Helpers.execSync('Pin 2 = '+slaveAddress[1]);
-    Helpers.execSync('Pin 3 = '+slaveAddress[2]);
+    // Helpers.execSync('Pin 1 = '+slaveAddress[0]);
+    // Helpers.execSync('Pin 2 = '+slaveAddress[1]);
+    // Helpers.execSync('Pin 3 = '+slaveAddress[2]);
 
-    // Helpers.sleep(0.001); // For ensure the clock time
+    // Helpers.execSync('Clock HIGH');
 
-    Helpers.execSync('Clock HIGH');
-
-    // Helpers.sleep(0.001); // For ensure the clock time
-
-    Helpers this.execSync('GET the master CI 4051 output pin');
+    // Helpers.execSync('GET the master CI 4051 output pin');
 };
 
 Home.prototype.get = function() {

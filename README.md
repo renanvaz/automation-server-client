@@ -19,9 +19,6 @@
 - GPIO PINs (Model B Rev 2) Também são utilzadas as portas 04 (clear), 18 (count) para fazer a contagem de quantos outputs o sistema fará o gerenciamento
 - Ver se vale a pena utilizar esta lib para o GPIO: http://wiringpi.com/download-and-install/
 
-## Check the raspbery board version
-A minha é a "B REV2"
-
 ## Requirimentos
 - NodeJS or IOJS ARM6l version (esta versão é para a Raspberry Model B Rev 2)
 - MysqlServer database
