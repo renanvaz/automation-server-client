@@ -1,6 +1,5 @@
 # HOMEZ
 É composto por 3 partes:
-
 - Home
 - Server
 - App
