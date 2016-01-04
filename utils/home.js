@@ -36,8 +36,7 @@ function Home (serverURL) {
     };
 
     // Load the data
-    this.read();
-    this.read();
+    // this.read();
 };
 
 Home.prototype.hardware = function() {
@@ -49,11 +48,11 @@ Home.prototype.hardware = function() {
     do {
         counter++;
 
-        this.gpio.LATCH_PIN.out(0);
+        // this.gpio.LATCH_PIN.out(0);
         this.gpio.CLOCK_PIN.out(0);
         this.gpio.DATA_PIN.out(1);
         this.gpio.CLOCK_PIN.out(1);
-        this.gpio.LATCH_PIN.out(1);
+        // this.gpio.LATCH_PIN.out(1);
 
     } while (this.gpio.COUNT.in() != 1);
 
