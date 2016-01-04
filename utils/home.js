@@ -19,6 +19,14 @@ function Home (serverURL) {
     this._data              = [];
     this._socket            = [];
 
+    this.gpio = {
+        LATCH: GPIO.setup(27, GPIO.OUT),
+        CLOCK: GPIO.setup(22, GPIO.OUT),
+        DATA: GPIO.setup(17, GPIO.OUT),
+        CLEAR: GPIO.setup(4, GPIO.OUT),
+        COUNT: GPIO.setup(18, GPIO.IN)
+    };
+
     if (!Helpers.exists(CONFIG_FILE)) {
         console.log(Messages.error.noConfigFile);
 
@@ -27,13 +35,7 @@ function Home (serverURL) {
 
     this.config = JSON.parse(Helpers.read(CONFIG_FILE));
 
-    this.gpio = {
-        LATCH: GPIO.setup(27, GPIO.OUT),
-        CLOCK: GPIO.setup(22, GPIO.OUT),
-        DATA: GPIO.setup(17, GPIO.OUT),
-        CLEAR: GPIO.setup(4, GPIO.OUT),
-        COUNT: GPIO.setup(18, GPIO.IN)
-    };
+
 
     // Load the data
     // this.read();
