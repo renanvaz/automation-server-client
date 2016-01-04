@@ -51,6 +51,7 @@ Home.prototype.hardware = function() {
     this.gpio.CLEAR.out(0); // Clear in 0
     this.gpio.CLEAR.out(1); // Back to normal
 
+    this.gpio.LATCH.out(0);
     do {
         counter++;
 
@@ -61,11 +62,10 @@ Home.prototype.hardware = function() {
         console.log('COUNT', this.gpio.END.in());
 
     } while (this.gpio.END.in() != 1);
+    this.gpio.LATCH.out(1);
 
-    setTimeout(function(){
-        this.gpio.CLEAR.out(0); // Clear in 0
-        this.gpio.CLEAR.out(1); // Back to normal
-    }.bind(this), 1000);
+    this.gpio.CLEAR.out(0); // Clear in 0
+    this.gpio.CLEAR.out(1); // Back to normal
 
     Helpers.write(CONFIG_FILE, JSON.stringify({devices: counter}));
 
