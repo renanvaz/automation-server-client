@@ -27,6 +27,9 @@ function Home (serverURL) {
         END: GPIO.setup(18, GPIO.IN)
     };
 
+    this.gpio.LATCH.out(0);
+    this.gpio.CLOCK.out(0);
+
     if (!Helpers.exists(CONFIG_FILE)) {
         console.log(Messages.error.noConfigFile);
 
