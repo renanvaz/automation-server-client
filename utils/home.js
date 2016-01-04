@@ -58,7 +58,7 @@ Home.prototype.hardware = function() {
 
         console.log('COUNT', this.gpio.COUNT.in());
 
-    } while (this.gpio.COUNT.in() != 1 && counter < 30);
+    } while (this.gpio.COUNT.in() != 1);
 
     this.gpio.CLEAR.out(0); // Clear in 0
     this.gpio.CLEAR.out(1); // Back to normal
