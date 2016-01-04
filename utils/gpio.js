@@ -20,7 +20,7 @@ var GPIO = {
         var mode = this._data[pin];
 
         if (mode === this.IN) {
-            return Helpers.read('/sys/class/gpio/gpio'+pin+'/value').toString() == 1 ? 1 : 0;
+            return parseInt(Helpers.read('/sys/class/gpio/gpio'+pin+'/value').toString());
         } else {
             throw new Error('The pin mode is "'+mode+'" and is not able to use the "in" method.');
         }
