@@ -19,7 +19,7 @@ function Home (serverURL) {
     this._data              = [];
     this._socket            = [];
 
-    if (Helpers.exists(CONFIG_FILE)) {
+    if (!Helpers.exists(CONFIG_FILE)) {
         console.log(Messages.error.noConfigFile);
 
         this.hardware();
