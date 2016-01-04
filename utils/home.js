@@ -48,10 +48,8 @@ function Home (serverURL) {
 Home.prototype.hardware = function() {
     var counter = 0;
 
-    this.gpio.LATCH.out(0);
     this.gpio.CLEAR.out(0); // Clear in 0
     this.gpio.CLEAR.out(1); // Back to normal
-    this.gpio.LATCH.out(1);
 
     do {
         counter++;
@@ -61,10 +59,8 @@ Home.prototype.hardware = function() {
         this.gpio.CLOCK.out(1);
     } while (this.gpio.END.in() != 1);
 
-    this.gpio.LATCH.out(0);
     this.gpio.CLEAR.out(0); // Clear in 0
     this.gpio.CLEAR.out(1); // Back to normal
-    this.gpio.LATCH.out(1);
 
     Helpers.write(CONFIG_FILE, JSON.stringify({devices: counter}));
 
